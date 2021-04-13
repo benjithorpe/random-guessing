@@ -54,6 +54,12 @@ form button{
 	display: block;
 }
 
+/* MAIN
+=============================================== */
+main small{
+	display: block;
+	font-style: italic;
+}
 /*.show-score*/
 
 @media screen and (min-width: 750px){	
