@@ -4,10 +4,7 @@
 	box-sizing: border-box;
 }
 
-html{
-	font-size: 62.5%;
-}
-
+html{ font-size: 62.5%; }
 body{
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 2rem;
@@ -25,22 +22,46 @@ ul li{
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
-.score-input{
-	display: none;
+h1{
+	text-align: center;
+	font-family: 'Trebuchet MS', Arial;
+	margin-bottom: 0.5em;
 }
 
+.score-input{ display: none; }
+form{ margin-top: .5em; }
+
 form button{
-	display: block;
+	font-size: 1.6rem;
 	margin-top: .5em;
-	color: white;
-	background-color: blue;
-	padding: .7em 1em;
+	color: #fff;
+	background-color: #6930c3;
+	padding: .5em 1em;
 	border: none;
 	border-radius: 4px;
 	font-weight: bolder;
-	font-size: 1.3rem;
+	cursor: pointer;
 }
 
+input[type="number"]{
+	display: block;
+	font-size: 2rem;
+	max-width: 100%;
+	height: 50px;
+	padding: 0 .7em;
+}
+
+section button{
+	margin: 1em auto;
+	font-size: 2rem;
+	background-color: blue;
+	padding: .6em 1.1em;
+	border: none;
+	color: white;
+	border-radius: 4px;
+	font-weight: bolder;
+	cursor: pointer;
+}
 
 .highscores{
 	text-align: center;
@@ -54,18 +75,51 @@ form button{
 	display: block;
 }
 
-/* MAIN
-=============================================== */
+section label{
+	color: gray;
+}
+
 main small{
 	display: block;
 	font-style: italic;
 }
-/*.show-score*/
 
-@media screen and (min-width: 750px){	
-	ul li:hover{
-		color: red;
+.hide{ display: none; }
+
+/* MEDIA QUERIES
+========================================================== */
+@media screen and (min-width: 550px){
+	body{
+		width: 90%;
+		margin: auto;
 	}
+
+	.player-level{ text-indent: 20%; }
+
+	main{
+		margin-top: 1em; 
+		display: flex; 
+		grid-gap: 10px;
+		align-items: center;
+	}
+
+	.highscores{ text-align: left; }
+}
+
+@media screen and (min-width: 750px){
+	body{
+		width: 70%;
+	}
+
+	main{
+		width: 80%;
+		margin: 1em auto;
+		grid-gap: 40px;
+	}
+
+	form{ margin-top: .2em; }
+
+	ul li:hover{ color: red; }
 }
 
 

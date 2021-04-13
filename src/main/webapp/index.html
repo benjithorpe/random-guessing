@@ -7,14 +7,16 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	<h1>Guessing Game</h1>
+
 	<div class="player-level">
-		<p>Level: 1</p>
-		<p>Score: 0</p>
+		<p class="level">Level: 1</p>
+		<p class="hide">Score: 0</p>
 	</div>
 
-	<div class="save-score">
+	<div class="save-score hide">
 		<p><a href="javascript:void(0)" class="saveScore">Save Score</a></p>
-		
+
 		<form action="#" class="score-input">
 			<label>Name: <input type="text" name="playerName"></label>
 			<button type="button">Save Score</button>			
@@ -22,9 +24,9 @@
 	</div>
 
 	<main>
-		<div class="highscores">
+		<div class="highscores hide">
 			<h3><a href="javascript:void(0)" class="top5">Top 5 Highscores</a></h3>
-			<ul class="score-details show-highscores">
+			<ul class="score-details">
 				<li>Name: 001</li>
 				<li>Name: 002</li>
 				<li>Name: 003</li>
@@ -33,14 +35,17 @@
 			</ul>
 		</div>
 
-		<div>
-			<small>Guess a number between 1 and 10</small>
+		<section>
+			<small class="msg">Guess a number between 1 and </small>
 			<label for="guessNumber">Guess the number</label>
-			<input type="number" name="number" id="guessNumber" autofocus>
+			<input type="number" min="0" name="number" id="guessNumber" autofocus>
 			<button type="button" id="guessBtn">Guess</button>
-		</div>
+		</section>
 	</main>
+
+	<p class="output" style="color: grey; font-style: italic;"></p>
 	
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/event-handlers.js"></script>
+<script type="text/javascript" src="js/game-logic.js"></script>
 </body>
 </html>

@@ -1,7 +1,6 @@
 // Variables
 var topFiveToggle = document.querySelector(".top5");
 var saveScoreToggle = document.querySelector(".saveScore");
-var guessBtn = document.getElementById("guessBtn");
 
 
 // Event Listeners
@@ -30,8 +29,4 @@ saveScoreToggle.addEventListener('click', function(){
 		scoreToggle.classList.add("score-input");
 		console.log(scoreToggle.classList);
 	}
-});
-
-guessBtn.addEventListener('click', function(){
-	console.log("guess button clicked!!")
 });
