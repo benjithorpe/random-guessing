@@ -2,7 +2,6 @@
 var topFiveToggle = document.querySelector(".top5");
 var saveScoreToggle = document.querySelector(".saveScore");
 
-
 // Event Listeners
 topFiveToggle.addEventListener('click', function(){
 	var scoreDetails = document.getElementsByTagName('ul')[0];
