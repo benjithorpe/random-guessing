@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Random Guesser</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1>Guess the Number</h1>
+
+	<main>
+		<section>
+			<div class="level-and-scores">
+				<!-- keeps track of level and points scored -->
+				<div>
+					<p>Level: <span class="level">1</span></p>
+					<p>Score: <span class="score">0</span></p>
+				</div>
+
+				<!-- form to save the highscores -->
+		        <div>
+					<input type="text" placeholder="Enter a name">
+					<button type="button" id="saveBtn">Save Score</button>
+				</div>				
+			</div>
+
+			<!-- list all the scores that have been saved -->
+			<div class="highscores">
+				<h4 class="top5">Highscores</h4>
+				<textarea id="" placeholder="Highscores" disabled
+				>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse ad sint distinctio, velit, ratione praesentium explicabo.</textarea>
+			</div>
+		</section>
+
+		<!-- gameplay section -->
+		<section class="gameplay">
+			<small>Guess a number between 0 and <span class="range">5</span></small>
+			<input type="number" min="0" id="guessNumber" autofocus>
+			<button type="button" id="guessBtn">Guess</button>
+		</section>
+	</main>
+
+	<!-- message to show depending on the guess number entered -->
+	<p class="output"></p>
+
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
