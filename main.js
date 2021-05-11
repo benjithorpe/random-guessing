@@ -1,36 +1,35 @@
-// Variables
-var saveScoreBtn = document.getElementById("saveBtn");
-var guessBtn = document.getElementById("guessBtn");
-var initialScore = document.querySelector(".score");
-var initialLevel = document.querySelector(".level");
-var initialRange = document.querySelector(".range");
-var outputMessage = document.querySelector(".output");
-var textareaOutput = document.getElementById("scores");
-var guessRange = 5;
-var secretNumber = Math.round(Math.random() * guessRange);
+// Global Variables
+const saveScoreBtn = document.getElementById("saveBtn");
+const guessBtn = document.getElementById("guessBtn");
+let initialScore = document.querySelector(".score");
+let initialLevel = document.querySelector(".level");
+let initialRange = document.querySelector(".range");
+let outputMessage = document.querySelector(".output");
+let textareaOutput = document.getElementById("scores");
+let guessRange = 5;
+let secretNumber = Math.round(Math.random() * guessRange);
 
 
 // Event Listeners
 saveScoreBtn.addEventListener('click', function(){
-	var currentScore = document.querySelector(".score").innerText;
-	var username = document.getElementById("username").value.trim();
+	const currentScore = document.querySelector(".score").innerText;
+	const username = document.getElementById("username").value.trim();
 
-	if(username === ""){
+	if(!username){
 		return;
 	}
 
 	localStorage.setItem(username, currentScore);
-	textareaOutput.value = ""; 
-	document.getElementById("username").value = "";	
+	textareaOutput.value = "";
+	document.getElementById("username").value = "";
 	displayScores();
 });
 
-
 guessBtn.addEventListener('click', function(){
-	var userGuess = document.getElementById("guessNumber");
+	let userGuess = document.getElementById("guessNumber");
 
 	// return back input box is empty
-	if(userGuess.value.trim() === ""){
+	if(!userGuess.value.trim()){
 		return;
 	}
 
@@ -48,22 +47,22 @@ guessBtn.addEventListener('click', function(){
 
 // Functions
 function displayScores(){
-	for (var i = 0; i < localStorage.length; i++) {
-		var currentKey = localStorage.key(i);
-		var currentValue = localStorage.getItem(currentKey);
+	for (let i = 0; i < localStorage.length; i++) {
+		let currentKey = localStorage.key(i);
+		let currentValue = localStorage.getItem(currentKey);
 
-		textareaOutput.value += `${currentKey} --> ${currentValue} points\n`; 
+		textareaOutput.value += `${currentKey} --> ${currentValue} points\n`;
 	}
 	// localStorage.clear();
 }
 
 function changeSecretNumber(){
 	secretNumber = Math.round(Math.random() * guessRange);
-	console.log(secretNumber);
+	// console.log(secretNumber);
 }
 
+// increase score points at different levels
 function updateGame(){
-	// increase score points at different levels
 	if(Number(initialLevel.innerText) >= 10){
 		increaseScore(10);
 	}else if(Number(initialLevel.innerText) >= 25){
@@ -76,7 +75,7 @@ function updateGame(){
 }
 
 function increaseScore(score){
-	initialScore.innerText = Number(initialScore.innerText) + score;	
+	initialScore.innerText = Number(initialScore.innerText) + score;
 	initialRange.innerText = Number(initialRange.innerText) + 5;
 	initialLevel.innerText = Number(initialLevel.innerText) + 1;
 }
